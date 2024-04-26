@@ -89,7 +89,7 @@ const MainNavbar = () => {
   return (
     <>
       <Tost />
-      <div className="roboto bg-base-100 flex justify-between items-center py-5 mx-auto w-[95%]">
+      <div className="poppins  bg-base-100 flex justify-between items-center py-5 w-[95%] lg:w-auto  mx-auto container ">
         {/* logo */}
         <div className="w-[160px] sm:w-auto">
           <Link to="/">

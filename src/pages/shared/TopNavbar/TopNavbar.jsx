@@ -9,7 +9,7 @@ const TopNavbar = () => {
       data-aos-delay="100"
       className="hidden lg:block py-1 bg-primary"
     >
-      <div className="poppins text-accent-content lg:grid  grid-cols-3 items-center w-[95%] mx-auto">
+      <div className="poppins text-accent-content lg:grid  grid-cols-3 items-center mx-auto container">
         <div className="flex gap-1 items-center text-[15px] ">
           <div className="w-[20px]">
             <img src={animatePhone} alt="phone" />

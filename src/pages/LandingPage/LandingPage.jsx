@@ -1,5 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Footer from "../shared/Footer/Footer";
 import MainNavbar from "../shared/MainNavbar/MainNavbar";
 import TopNavbar from "../shared/TopNavbar/TopNavbar";
 AOS.init();
@@ -32,6 +33,10 @@ const LandingPage = () => {
           <MainNavbar />
         </nav>
       </header>
+
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
