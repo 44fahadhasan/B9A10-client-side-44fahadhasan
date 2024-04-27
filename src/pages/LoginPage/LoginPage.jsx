@@ -210,7 +210,7 @@ const LoginPage = () => {
                       </button>
                     </div>
 
-                    <Link to="/register">
+                    <Link to="/Register">
                       <p className="text-center text-sm">
                         Don&rsquo;t have an account ?{" "}
                         <span className="underline ">register</span>

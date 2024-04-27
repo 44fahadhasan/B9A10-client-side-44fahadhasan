@@ -1,5 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Outlet } from "react-router-dom";
 import Footer from "../shared/Footer/Footer";
 import MainNavbar from "../shared/MainNavbar/MainNavbar";
 import TopNavbar from "../shared/TopNavbar/TopNavbar";
@@ -33,7 +34,9 @@ const LandingPage = () => {
           <MainNavbar />
         </nav>
       </header>
-
+      <main>
+        <Outlet />
+      </main>
       <footer>
         <Footer />
       </footer>

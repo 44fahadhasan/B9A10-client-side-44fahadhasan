@@ -83,14 +83,14 @@ const FooterMiddle = () => {
           </h3>
           <ul className="space-y-2 text-[15px]">
             <li>
-              <Link className="hover:underline hover:text-primary" to="login">
+              <Link className="hover:underline hover:text-primary" to="Login">
                 Login
               </Link>
             </li>
             <li>
               <Link
                 className="hover:underline hover:text-primary"
-                to="register"
+                to="Register"
               >
                 Registration
               </Link>

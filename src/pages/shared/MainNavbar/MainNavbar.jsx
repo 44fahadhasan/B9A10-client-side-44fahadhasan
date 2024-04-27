@@ -62,7 +62,7 @@ const MainNavbar = () => {
         <div className="flex">
           <div className="-mr-[20px] z-10">
             <Link
-              to="/login"
+              to="/Login"
               onClick={() => setToggleMenuIcon(!toggleMenuIcon)}
             >
               <Button
@@ -77,7 +77,7 @@ const MainNavbar = () => {
 
           <div>
             <Link
-              to="/register"
+              to="/Register"
               onClick={() => setToggleMenuIcon(!toggleMenuIcon)}
             >
               <Button
@@ -136,6 +136,16 @@ const MainNavbar = () => {
                 }
               >
                 Add Craft Item
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="My-Art-&-Craft-List"
+                className={({ isActive }) =>
+                  isActive ? "text-secondary" : "text-primary"
+                }
+              >
+                My Art & Craft List
               </NavLink>
             </li>
           </ul>
