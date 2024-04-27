@@ -15,12 +15,12 @@ const Button = ({ text, bg, hoverBg, textColor, hoverTextColor }) => {
 };
 
 Button.propTypes = {
-  link: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  hoverTextColor: PropTypes.string.isRequired,
-  bg: PropTypes.string.isRequired,
-  hoverBg: PropTypes.string.isRequired,
-  textColor: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  text: PropTypes.string,
+  hoverTextColor: PropTypes.string,
+  bg: PropTypes.string,
+  hoverBg: PropTypes.string,
+  textColor: PropTypes.string,
 };
 
 export default Button;
