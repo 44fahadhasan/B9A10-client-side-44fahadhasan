@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/svgImages/login.svg";
 import Button from "../../components/Button/Button";
 import Tost from "../../components/Tost/Tost";
+import useAuth from "../../hooks/useAuth";
 import SectionContent from "../shared/SectionContent/SectionContent";
 
 const LoginPage = () => {
   const [toggle, setToggle] = useState(true);
+
+  const { userLogin, loginWithGoogle, loginWithGithub } = useAuth();
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -22,14 +28,15 @@ const LoginPage = () => {
     const email = data.email;
     const password = data.password;
 
-    // password validation
-    if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
-      return toast.error(
-        "Minimum one english character lower and upper case  must be included in the password with length 6 greater than or equal"
-      );
-    }
-
-    console.log(email, password);
+    userLogin(email, password)
+      .then(() => {
+        // Signed in
+        toast.success("Login successful by email account");
+        navigate(`${location?.state ?? "/"}`);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
 
     resetField("email");
     resetField("password");
@@ -38,6 +45,17 @@ const LoginPage = () => {
   // password view toggle
   const handleToggle = () => {
     setToggle(!toggle);
+  };
+
+  const handleSocialLogin = (socialLogin, value) => {
+    socialLogin()
+      .then(() => {
+        toast.success(`Login successful by ${value} account`);
+        navigate(`${location?.state ?? "/"}`);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
 
   return (
@@ -53,7 +71,10 @@ const LoginPage = () => {
             />
             <div className="w-full flex-1 mt-8">
               <div className="flex flex-col items-center">
-                <button className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-base-200 text-primary-content flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
+                <button
+                  onClick={() => handleSocialLogin(loginWithGoogle, "google")}
+                  className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-base-200 text-primary-content flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
+                >
                   <div className="bg-accent-content p-2 rounded-full">
                     <svg className="w-4" viewBox="0 0 533.5 544.3">
                       <path
@@ -77,7 +98,10 @@ const LoginPage = () => {
                   <span className="ml-4">Login with Google</span>
                 </button>
 
-                <button className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-base-200 text-primary-content flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5">
+                <button
+                  onClick={() => handleSocialLogin(loginWithGithub, "github")}
+                  className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-base-200 text-primary-content flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5"
+                >
                   <div className="bg-accent-content p-1 rounded-full">
                     <svg className="w-6" viewBox="0 0 32 32">
                       <path

@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Tost from "../../components/Tost/Tost";
+import useAuth from "../../hooks/useAuth";
 import SectionContent from "../shared/SectionContent/SectionContent";
 
 const RegisterPage = () => {
   const [toggle, setToggle] = useState(true);
+
+  const { createNewUser, updateUserProfile } = useAuth();
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -30,8 +36,16 @@ const RegisterPage = () => {
       );
     }
 
-    console.log(fullName, email, photourl, password);
-
+    createNewUser(email, password)
+      .then(() => {
+        // user profile
+        updateUserProfile(fullName, photourl);
+        navigate(`${location?.state ?? "/"}`);
+        toast.success("Created an new account successfully");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
     resetField("fullName");
     resetField("email");
     resetField("photourl");

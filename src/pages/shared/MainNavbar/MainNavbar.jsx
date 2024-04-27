@@ -6,17 +6,25 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import logo from "../../../assets/images/logo.png";
 import Button from "../../../components/Button/Button";
 import Tost from "../../../components/Tost/Tost";
+import useAuth from "../../../hooks/useAuth";
 
 const MainNavbar = () => {
   const [toggleMenuIcon, setToggleMenuIcon] = useState(true);
-  const user = !true;
+
+  const { userLogOut, user } = useAuth();
 
   const handelToggleMenu = () => {
     setToggleMenuIcon(!toggleMenuIcon);
   };
 
   const handleLogOut = () => {
-    toast.success("successfully Logout");
+    userLogOut()
+      .then(() => {
+        toast.success("successfully Logout");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
 
   const userProfile = (
