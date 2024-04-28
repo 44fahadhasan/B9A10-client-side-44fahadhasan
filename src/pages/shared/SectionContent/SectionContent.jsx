@@ -5,7 +5,7 @@ const SectionContent = ({ leftTitle, rightTitle, content }) => {
       <h2 className="dmsans text-2xl sm:text-4xl font-bold text-primary-content">
         {leftTitle} <span className="text-primary">{rightTitle}</span>
       </h2>
-      <p className="poppins text-[15px] text-secondary-content font-light mx-auto w-[85%] sm:w-[70%] lg:w-[60%] xl:w-[50%]">
+      <p className="poppins text-[15px] text-secondary-content font-light mx-auto w-[85%]  lg:w-[60%] xl:w-[50%]">
         {content}
       </p>
     </div>
