@@ -1,3 +1,4 @@
+import AskedAnswer from "./AskedAnswer/AskedAnswer";
 import Sliders from "./BannarSlider/Sliders/Sliders";
 
 const HomePage = () => {
@@ -6,6 +7,10 @@ const HomePage = () => {
       {/* slider */}
       <section className="overflow-hidden block">
         <Sliders />
+      </section>
+      {/* FAQ */}
+      <section className="py-[70px]">
+        <AskedAnswer />
       </section>
     </div>
   );
