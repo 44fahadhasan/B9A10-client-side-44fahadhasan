@@ -5,16 +5,17 @@ import WhyTerraCotta from "./WhyTerraCotta/WhyTerraCotta";
 const HomePage = () => {
   return (
     <div>
-      {/* slider */}
+      {/* slider section*/}
       <section className="overflow-hidden block">
         <Sliders />
       </section>
 
+      {/* why terracota section  */}
       <section className="py-[70px]">
         <WhyTerraCotta />
       </section>
 
-      {/* FAQ */}
+      {/* FAQ section*/}
       <section className="py-[70px]">
         <AskedAnswer />
       </section>

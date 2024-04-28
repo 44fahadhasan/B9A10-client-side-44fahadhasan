@@ -16,7 +16,7 @@ const WhyTerraCotta = () => {
         />
       </section>
 
-      <section className="mt-12 grid grid-cols-4 gap-4">
+      <section className="mt-12 grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
         <FeatureBox
           vehicle={track}
           title="Free Delivery Worldwide"

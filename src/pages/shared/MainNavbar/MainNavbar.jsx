@@ -60,7 +60,7 @@ const MainNavbar = () => {
         </button>
       ) : (
         <div className="flex">
-          <div className="-mr-[20px] z-10">
+          <div className="-mr-[35px] z-10 py-2 rounded-[30px]">
             <Link
               to="/Login"
               onClick={() => setToggleMenuIcon(!toggleMenuIcon)}
@@ -74,8 +74,7 @@ const MainNavbar = () => {
               />
             </Link>
           </div>
-
-          <div>
+          <div className=" bg-primary hover:bg-secondary transition-all duration-500 pl-[21px] py-2 rounded-[30px]">
             <Link
               to="/Register"
               onClick={() => setToggleMenuIcon(!toggleMenuIcon)}
