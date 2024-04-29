@@ -7,6 +7,7 @@ import LandingPage from "../pages/LandingPage/LandingPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import MyArtAndCraftListPage from "../pages/MyArtAndCraftListPage/MyArtAndCraftListPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
+import ViewDetailsPage from "../pages/ViewDetailsPage/ViewDetailsPage";
 import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
@@ -28,6 +29,14 @@ const routes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddCraftItemPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "View-Details",
+        element: (
+          <PrivateRoute>
+            <ViewDetailsPage />
           </PrivateRoute>
         ),
       },
