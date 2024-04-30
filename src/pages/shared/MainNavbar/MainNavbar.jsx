@@ -206,6 +206,16 @@ const MainNavbar = () => {
               Add Craft Item
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="My-Art-&-Craft-List"
+              className={({ isActive }) =>
+                isActive ? "text-secondary" : "text-primary"
+              }
+            >
+              My Art & Craft List
+            </NavLink>
+          </li>
         </ul>
 
         {/* login & logout button for small device */}
