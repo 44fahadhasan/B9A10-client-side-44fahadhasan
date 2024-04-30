@@ -8,8 +8,8 @@ const ProductCard = ({ craftItem = {} }) => {
     <div className="dmsans relative w-full  border border-[#F2F0EF]  overflow-hidden rounded-lg bg-accent-content">
       <div className="group relative overflow-hidden">
         <img
-          src={craftItem?.image}
-          alt={craftItem?.name}
+          src={craftItem?.imageurl}
+          alt={craftItem?.craftName}
           className="inset-0 h-64 w-full rounded-t-lg object-cover transition-all duration-[1500ms] group-hover:scale-110"
         />
       </div>
@@ -22,7 +22,7 @@ const ProductCard = ({ craftItem = {} }) => {
 
       <div className="pt-1 px-5 pb-5 bg-[#FEFCFB]">
         <a href="#">
-          <h5 className="text-neutral font-medium">{craftItem?.name}</h5>
+          <h5 className="text-neutral font-medium">{craftItem?.craftName}</h5>
         </a>
         <div className="mt-2.5 mb-5 flex items-center">
           <span className="mr-2 rounded bg-[#CCCCCC] px-2.5 py-0.5 text-xs font-semibold text-primary-content">
@@ -80,11 +80,11 @@ const ProductCard = ({ craftItem = {} }) => {
               {craftItem?.discountPrice}$
             </span>
             <span className="text-sm text-secondary-content line-through">
-              {craftItem?.regularPrice}$
+              {craftItem?.price}$
             </span>
           </p>
           <div>
-            <Link to={`View-Details/${craftItem?._id}`}>
+            <Link to={`/View-Details/craft-items/${craftItem?._id}`}>
               <Button text="DETAILS" bg="bg-base-300" />
             </Link>
           </div>

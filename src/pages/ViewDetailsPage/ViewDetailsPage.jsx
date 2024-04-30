@@ -8,19 +8,18 @@ import saveMoney from "../../assets/images/save-money.png";
 const ViewDetailsPage = () => {
   const data = useLoaderData();
   const {
-    image,
+    imageurl,
     description,
     discountPrice,
-    name,
-    stockQuantity,
+    craftName,
     comment,
     stockStatus,
-    regularPrice,
-    reviews,
+    price,
+    rating,
     productType,
-    categoryName,
+    category,
     customization,
-    prreparingTime,
+    processingTime,
   } = data ?? {};
   return (
     <>
@@ -30,11 +29,15 @@ const ViewDetailsPage = () => {
             <div className="flex flex-col md:flex-row gap-9">
               <div className=" md:basis-[50%]">
                 <div className="md:sticky md:top-5">
-                  <div className="w-full mx-auto border border-[#EEEEEE] rounded-md">
+                  <div
+                    className={`w-full mx-auto  border-[#EEEEEE] ${
+                      imageurl && "border"
+                    } rounded-md`}
+                  >
                     <img
                       className="h-full w-full object-cover rounded-md"
-                      src={image}
-                      alt={name}
+                      src={imageurl}
+                      alt={craftName}
                     />
                   </div>
                 </div>
@@ -42,7 +45,7 @@ const ViewDetailsPage = () => {
 
               <div className="md:basis-[50%]">
                 <h1 className="sm: text-2xl dmsans font-medium text-primary-content sm:text-3xl">
-                  {name}
+                  {craftName}
                 </h1>
 
                 <div className="mt-4 flex items-center">
@@ -89,26 +92,24 @@ const ViewDetailsPage = () => {
                     </svg>
                   </div>
                   <p className="ml-2 text-sm font-medium text-neutral">
-                    {reviews ?? "1 "}Reviews
+                    {rating ?? "1 "} Reviews
                   </p>
                 </div>
 
                 <div className="flex items-end gap-1 font-medium mt-2">
-                  {regularPrice && (
+                  <h2 className="text-2xl text-primary-content">${price}</h2>
+
+                  {discountPrice && (
                     <span className="text-lg text-[#787878] line-through">
-                      ${regularPrice}
+                      ${discountPrice}
                     </span>
                   )}
-                  <h2 className="text-2xl text-primary-content">
-                    ${discountPrice}
-                  </h2>
                 </div>
 
                 <div className="font-medium text-[#666] text-sm space-y-2 mt-3">
-                  {categoryName && (
+                  {category && (
                     <h2>
-                      Category :{" "}
-                      <span className="font-normal">{categoryName}</span>
+                      Category : <span className="font-normal">{category}</span>
                     </h2>
                   )}
 
@@ -120,7 +121,7 @@ const ViewDetailsPage = () => {
                   )}
                 </div>
 
-                {(customization || prreparingTime) && (
+                {(customization || processingTime) && (
                   <div className="flex gap-4 font-medium text-[#666] text-sm mt-3">
                     {customization && (
                       <h2 className="flex items-center gap-[1px]">
@@ -134,11 +135,13 @@ const ViewDetailsPage = () => {
                           <path d="M3.5 5.75c0-.69.56-1.25 1.25-1.25H10A.75.75 0 0 0 10 3H4.75A2.75 2.75 0 0 0 2 5.75v9.5A2.75 2.75 0 0 0 4.75 18h9.5A2.75 2.75 0 0 0 17 15.25V10a.75.75 0 0 0-1.5 0v5.25c0 .69-.56 1.25-1.25 1.25h-9.5c-.69 0-1.25-.56-1.25-1.25v-9.5Z" />
                         </svg>
                         Customization :{" "}
-                        <span className="font-normal">{customization}</span>
+                        <span className="font-normal ml-[2px]">
+                          {customization}
+                        </span>
                       </h2>
                     )}
 
-                    {prreparingTime && (
+                    {processingTime && (
                       <h2 className="flex items-center gap-[1px]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -154,8 +157,10 @@ const ViewDetailsPage = () => {
                             d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                           />
                         </svg>
-                        Preparing Times :{" "}
-                        <span className="font-normal">{prreparingTime}</span>
+                        Processing Times :{" "}
+                        <span className="font-normal ml-[2px]">
+                          {processingTime}
+                        </span>
                       </h2>
                     )}
                   </div>
@@ -165,26 +170,23 @@ const ViewDetailsPage = () => {
                   <p className="poppins font-medium  text-[15px] text-primary-content">
                     Hurry! Only{" "}
                     <span className="text-base font-bold text-[#ff3d12]">
-                      <Typewriter
-                        loop={Infinity}
-                        words={
-                          stockQuantity ?? `${Math.round(Math.random() + 2)}`
-                        }
-                      />
+                      <Typewriter loop={Infinity} words={"9"} />
                     </span>{" "}
                     units left in stock!
                   </p>
                   <progress
                     className="progress progress-warning bg-[#E1E1E1] w-[70%]"
-                    value={stockQuantity ?? 3}
+                    value={Math.floor(Math.random() * 100) + 1}
                     max="100"
                   ></progress>
                 </div>
 
-                <div className="mt-3 text-sm font-medium text-[#666]">
-                  <span className=" ">Availability: </span>
-                  <span className="font-normal"> {` ${stockStatus}`}</span>
-                </div>
+                {stockStatus && (
+                  <div className="mt-3 text-sm font-medium text-[#666]">
+                    <span className=" ">Availability : </span>
+                    <span className="font-normal"> {`   ${stockStatus}`}</span>
+                  </div>
+                )}
 
                 <div className="mt-4">
                   <h3 className="text-lg font-bold text-primary-content">
@@ -294,7 +296,7 @@ const ViewDetailsPage = () => {
                     role="tab"
                     className="tab text-primary-content font-semibold"
                     aria-label="DISCRETION"
-                    checked
+                    defaultChecked
                   />
                   <div
                     role="tabpanel"
@@ -303,13 +305,15 @@ const ViewDetailsPage = () => {
                     {description}
                   </div>
 
-                  <input
-                    type="radio"
-                    name="my_tabs_2"
-                    role="tab"
-                    className="tab text-primary-content font-semibold"
-                    aria-label="REVIEW"
-                  />
+                  {comment && (
+                    <input
+                      type="radio"
+                      name="my_tabs_2"
+                      role="tab"
+                      className="tab text-primary-content font-semibold"
+                      aria-label="REVIEW"
+                    />
+                  )}
                   <div
                     role="tabpanel"
                     className="tab-content text-sm text-secondary-content p-6"

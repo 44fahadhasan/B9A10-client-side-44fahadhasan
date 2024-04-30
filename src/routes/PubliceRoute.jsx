@@ -33,9 +33,11 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "View-Details/:id",
+        path: "View-Details/:categoryId/:productId",
         loader: ({ params }) =>
-          fetch(`http://localhost:5003/craft-items/${params.id}`),
+          fetch(
+            `http://localhost:5003/${params.categoryId}/${params.productId}`
+          ),
         element: (
           <PrivateRoute>
             <ViewDetailsPage />
