@@ -7,6 +7,7 @@ import LandingPage from "../pages/LandingPage/LandingPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import MyArtAndCraftListPage from "../pages/MyArtAndCraftListPage/MyArtAndCraftListPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
+import UpdatedPage from "../pages/UpdatedPage/UpdatedPage";
 import ViewDetailsPage from "../pages/ViewDetailsPage/ViewDetailsPage";
 import PrivateRoute from "./PrivateRoute";
 
@@ -59,6 +60,16 @@ const routes = createBrowserRouter([
       {
         path: "Login",
         element: <LoginPage />,
+      },
+      {
+        path: "Update/:productId",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5003/${params.productId}`),
+        element: (
+          <PrivateRoute>
+            <UpdatedPage />
+          </PrivateRoute>
+        ),
       },
     ],
   },
