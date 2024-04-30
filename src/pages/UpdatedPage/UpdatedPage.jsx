@@ -39,13 +39,16 @@ const UpdatedPage = () => {
       processingTime,
       description,
     };
-    fetch(`http://localhost:5003/add-craft-item/${crafData._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedProductInfo),
-    })
+    fetch(
+      `https://b9a10-server-side-44fahadhasan.vercel.app/add-craft-item/${crafData._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProductInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {

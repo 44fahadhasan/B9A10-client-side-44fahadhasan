@@ -39,7 +39,7 @@ const AddCraftItemPage = () => {
       description,
     };
 
-    fetch("http://localhost:5003/add-craft-item", {
+    fetch("https://b9a10-server-side-44fahadhasan.vercel.app/add-craft-item", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

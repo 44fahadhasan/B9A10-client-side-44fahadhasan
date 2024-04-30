@@ -37,7 +37,7 @@ const routes = createBrowserRouter([
         path: "View-Details/:categoryId/:productId",
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5003/${params.categoryId}/${params.productId}`
+            `https://b9a10-server-side-44fahadhasan.vercel.app/${params.categoryId}/${params.productId}`
           ),
         element: (
           <PrivateRoute>
@@ -64,7 +64,9 @@ const routes = createBrowserRouter([
       {
         path: "Update/:productId",
         loader: ({ params }) =>
-          fetch(`http://localhost:5003/add-craft-item/${params.productId}`),
+          fetch(
+            `https://b9a10-server-side-44fahadhasan.vercel.app/add-craft-item/${params.productId}`
+          ),
         element: (
           <PrivateRoute>
             <UpdatedPage />

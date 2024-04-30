@@ -5,7 +5,7 @@ import SectionContent from "../../shared/SectionContent/SectionContent";
 const CraftItems = () => {
   const [craftItems, setCraftItems] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5003/craft-items")
+    fetch("https://b9a10-server-side-44fahadhasan.vercel.app/craft-items")
       .then((res) => res.json())
       .then((data) => setCraftItems(data));
   }, []);
