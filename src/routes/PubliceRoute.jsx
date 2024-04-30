@@ -64,7 +64,7 @@ const routes = createBrowserRouter([
       {
         path: "Update/:productId",
         loader: ({ params }) =>
-          fetch(`http://localhost:5003/${params.productId}`),
+          fetch(`http://localhost:5003/add-craft-item/${params.productId}`),
         element: (
           <PrivateRoute>
             <UpdatedPage />
