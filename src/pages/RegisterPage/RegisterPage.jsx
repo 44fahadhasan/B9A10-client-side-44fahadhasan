@@ -303,7 +303,7 @@ const RegisterPage = () => {
                       {...register("email", { required: true })}
                       type="email"
                       name="email"
-                      placeholder="johnsmith@example.com"
+                      placeholder="johndoe@example.com"
                       className="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-[#E9E9E9] text-secondary-content outline-none focus:border-primary bg-accent-content"
                     />
                     {errors.email && (
