@@ -1,6 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../shared/Footer/Footer";
 import MainNavbar from "../shared/MainNavbar/MainNavbar";
 import TopNavbar from "../shared/TopNavbar/TopNavbar";
@@ -26,6 +27,18 @@ AOS.init({
   anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
 });
 const LandingPage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      document.title = "Terra Cotta - Home";
+      return;
+    }
+    document.title = `Terra Cotta - ${location.pathname
+      .replaceAll("/", " - ")
+      .replaceAll("-", " ")}`;
+  }, [location]);
+
   return (
     <div>
       <header>
