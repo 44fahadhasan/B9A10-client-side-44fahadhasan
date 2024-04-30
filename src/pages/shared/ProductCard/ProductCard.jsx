@@ -21,9 +21,9 @@ const ProductCard = ({ craftItem = {} }) => {
       )}
 
       <div className="pt-1 px-5 pb-5 bg-[#FEFCFB]">
-        <a href="#">
+        <h2>
           <h5 className="text-neutral font-medium">{craftItem?.craftName}</h5>
-        </a>
+        </h2>
         <div className="mt-2.5 mb-5 flex items-center">
           <span className="mr-2 rounded bg-[#CCCCCC] px-2.5 py-0.5 text-xs font-semibold text-primary-content">
             5.0
