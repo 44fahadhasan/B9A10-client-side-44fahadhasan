@@ -208,6 +208,7 @@ const MainNavbar = () => {
           </li>
           <li>
             <NavLink
+              onClick={() => setToggleMenuIcon(!toggleMenuIcon)}
               to="My-Art-&-Craft-List"
               className={({ isActive }) =>
                 isActive ? "text-secondary" : "text-primary"
