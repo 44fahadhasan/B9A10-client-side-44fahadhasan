@@ -21,7 +21,7 @@ To run this project locally:
 
 1. **Clone the repository:**
    - [client](https://github.com/44fahadhasan/B9A10-client-side-44fahadhasan)
-   - [server](https://github.com/44fahadhasanB9A10-server-side-44fahadhasan)
+   - [server](https://github.com/44fahadhasan/B9A10-server-side-44fahadhasan)
 
 3. **Install dependencies:**
 - `cd B9A10-client-side-44fahadhasan && npm install`
