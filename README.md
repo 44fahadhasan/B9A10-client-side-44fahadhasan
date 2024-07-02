@@ -1,37 +1,30 @@
-# Newspaper Website Project
+# Terra Cotta
 
 ## Overview
-The newspaper website project provides a platform for both normal and premium users to access news articles. Users can subscribe to premium content using integrated payment methods. The admin dashboard facilitates user and content management, ensuring smooth operation.
+Terra Cotta offers a robust platform for managing your collection effortlessly. Seamlessly add, delete, and update items to curate your collection. Enjoy secure login options via email, password, or through Google and GitHub accounts, ensuring convenient access to your personalized collection management tools.
 
-## Key Features
+## Features
 
-### User Roles
-- **Normal Users:** Access to free news content.
-- **Premium Users:** Access to exclusive premium news content upon subscription.
-
-### Subscription System
-- Users can upgrade to premium membership using integrated payment methods.
-
-### Admin Dashboard
-- Manage users: creation, deletion, and updating profiles.
-- Manage news content: creation, deletion, and updating posts for both premium and normal sections.
+- **CRUD Operations:** Easily manage your collection with Create, Read, Update, and Delete operations.
+- **Secure Authentication:** Login securely using email, password, or GitHub credentials.
+- **User-friendly Interface:** Intuitive design for effortless navigation and management of your items.
 
 ## Technologies Used
 - **Frontend:** React.js, Tailwind CSS
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
-- **Payment Gateway:** Stripe
+- **Authentication:** Firebase 
 
 ## Getting Started
 
 To run this project locally:
 
 1. **Clone the repository:**
-   - [client](https://github.com/44fahadhasan/b9a12-client-side-44fahadhasan)
-   - [server](https://github.com/44fahadhasan/b9a12-server-side-44fahadhasan)
+   - [client](https://github.com/44fahadhasan/B9A10-client-side-44fahadhasan)
+   - [server](https://github.com/44fahadhasanB9A10-server-side-44fahadhasan)
 
 3. **Install dependencies:**
-- `cd b9a12-client-side-44fahadhasan && npm install`
+- `cd B9A10-client-side-44fahadhasan && npm install`
 - `cd b9a12-server-side-44fahadhasan && npm install`
 
 3. **Set up Firebase:**
@@ -44,10 +37,10 @@ To run this project locally:
    `cd b9a12-server-side-44fahadhasan && npm run dev`
 
 7. **Run the client:**
-   `cd b9a12-client-side-44fahadhasan && npm run dev`
+   `cd B9A10-client-side-44fahadhasan && npm run dev`
 
 9. **Access the app:**
   `http://localhost:3000`
 
 ## Live Demo
-Check out the live version of the project [here](https://b9a12-client-side-44fahadhasan.netlify.app).
+Check out the live version of the project [here](https://B9A10-client-side-44fahadhasan.netlify.app).
