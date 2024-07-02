@@ -25,7 +25,7 @@ To run this project locally:
 
 3. **Install dependencies:**
 - `cd B9A10-client-side-44fahadhasan && npm install`
-- `cd b9a12-server-side-44fahadhasan && npm install`
+- `cd B9A10-server-side-44fahadhasan && npm install`
 
 3. **Set up Firebase:**
 - Go to [Firebase Console](https://console.firebase.google.com/), create a project, and generate a private key.
@@ -34,7 +34,7 @@ To run this project locally:
 - Create `.env` files in both directories with Firebase and MongoDB credentials.
 
 5. **Run the server:**
-   `cd b9a12-server-side-44fahadhasan && npm run dev`
+   `cd B9A10-server-side-44fahadhasan && npm run dev`
 
 7. **Run the client:**
    `cd B9A10-client-side-44fahadhasan && npm run dev`
